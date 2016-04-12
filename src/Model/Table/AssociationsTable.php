@@ -67,8 +67,7 @@ class AssociationsTable extends Table
             ->notEmpty('lga');
 
         $validator
-            ->requirePresence('ward', 'create')
-            ->notEmpty('ward');
+                ->allowEmpty('ward');
 
         $validator
             ->allowEmpty('market');
