@@ -50,6 +50,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/', ['controller' => 'Associations', 'action' => 'add']);
     $routes->connect('/register', ['controller' => 'Associations', 'action' => 'add']);
+    $routes->connect('/success', ['controller' => 'Associations', 'action' => 'success']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

@@ -7,6 +7,7 @@ use App\Controller\AppController;
  * Associations Controller
  *
  * @property \App\Model\Table\AssociationsTable $Associations
+ * @property \App\Model\Table\CategoriesTable $Categories
  */
 class AssociationsController extends AppController
 {
@@ -48,12 +49,13 @@ class AssociationsController extends AppController
      */
     public function add()
     {
+        $this->loadModel('Categories');
         $association = $this->Associations->newEntity();
         if ($this->request->is('post')) {
             $association = $this->Associations->patchEntity($association, $this->request->data);
             if ($this->Associations->save($association)) {
-                $this->Flash->success(__('The association has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                $this->Flash->success(__('Thanks for registering. Your entry has been saved. For further information, dial 73089'));
+                return $this->redirect('/success');
             } else {
                 $this->Flash->error(__('The association could not be saved. Please, try again.'));
             }
@@ -104,5 +106,9 @@ class AssociationsController extends AppController
             $this->Flash->error(__('The association could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
+    }
+    
+    public function success(){
+        
     }
 }
