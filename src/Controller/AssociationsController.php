@@ -57,7 +57,7 @@ class AssociationsController extends AppController
                 $this->Flash->success(__('Thanks for registering. Your entry has been saved. For further information, dial 73089'));
                 return $this->redirect('/success');
             } else {
-                $this->Flash->error(__('The association could not be saved. Please, try again.'));
+                $this->Flash->error(__('Your entry could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('association'));
