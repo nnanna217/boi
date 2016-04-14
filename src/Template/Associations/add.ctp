@@ -11,8 +11,24 @@
         echo $this->Form->input('date_of_formation', ['empty' => true, 'minYear' => date('Y') - 70,
             'maxYear' => date('Y')]);
         echo $this->Form->input('address');
-        echo $this->Form->input('state');
-        echo $this->Form->input('lga');
+        ?>
+        <div class="col-md-3 ">
+            <div id="size">Select State :</div>
+            <div>
+                <select required onchange="print_state('lga', this.selectedIndex);
+                " class="form-control" name="state" required="required" id="state"></select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div id="size">Select L.G.A : </div>
+            <select required="required" name ="lga" id ="lga"  class="form-control"></select>
+            <script language="javascript">print_country("state");</script>
+        </div>
+<!--        <div class="input text required"><label for="state">State</label><input type="text" name="state" required="required" maxlength="255" id="state"></div>
+        <div class="input text required"><label for="lga">Lga</label><input type="text" name="lga" required="required" maxlength="255" id="lga"></div>-->
+        <?php
+//        echo $this->Form->input('state');
+//        echo $this->Form->input('lga');
         echo $this->Form->input('ward');
         echo $this->Form->input('market');
         echo $this->Form->input('closest_landmark');
