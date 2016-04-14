@@ -24,8 +24,6 @@
             <select required="required" name ="lga" id ="lga"  class="form-control"></select>
             <script language="javascript">print_country("state");</script>
         </div>
-<!--        <div class="input text required"><label for="state">State</label><input type="text" name="state" required="required" maxlength="255" id="state"></div>
-        <div class="input text required"><label for="lga">Lga</label><input type="text" name="lga" required="required" maxlength="255" id="lga"></div>-->
         <?php
 //        echo $this->Form->input('state');
 //        echo $this->Form->input('lga');
