@@ -1,10 +1,15 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!--<nav class="large-3 medium-4 columns" id="actions-sidebar">
 
-</nav>
-<div class="associations form large-9 medium-8 columns content">
+</nav>-->
+<div class="large-10 columns push-1">
+<div class="associations form large-5 medium-8 columns">
+
     <?= $this->Form->create($association) ?>
     <fieldset>
-        <legend><?= __('Add Association') ?></legend>
+
+
+
+<div class="row" style="margin-top: 50px">
         <?php
         echo $this->Form->input('name');
         echo $this->Form->input('rc_number');
@@ -12,18 +17,27 @@
             'maxYear' => date('Y')]);
         echo $this->Form->input('address');
         ?>
-        <div class="col-md-3 ">
-            <div id="size">Select State :</div>
-            <div>
-                <select required onchange="print_state('lga', this.selectedIndex);
+    <div class="col-md-3 ">
+        <div id="size">Select State :</div>
+        <div>
+            <select required onchange="print_state('lga', this.selectedIndex);
                 " class="form-control" name="state" required="required" id="state"></select>
             </div>
         </div>
-        <div class="col-md-3">
-            <div id="size">Select L.G.A : </div>
-            <select required="required" name ="lga" id ="lga"  class="form-control"></select>
-            <script language="javascript">print_country("state");</script>
-        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="size">Select L.G.A : </div>
+        <select required="required" name ="lga" id ="lga"  class="form-control"></select>
+        <script language="javascript">print_country("state");</script>
+    </div>
+
+
+</div>
+
+<!--        <div class="input text required"><label for="state">State</label><input type="text" name="state" required="required" maxlength="255" id="state"></div>
+        <div class="input text required"><label for="lga">Lga</label><input type="text" name="lga" required="required" maxlength="255" id="lga"></div>-->
+<div class="associations form large-5 medium-8 columns content">
+
         <?php
 //        echo $this->Form->input('state');
 //        echo $this->Form->input('lga');
@@ -39,3 +53,4 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+    </div>
