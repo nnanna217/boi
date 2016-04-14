@@ -29,7 +29,7 @@
         <?php
 //        echo $this->Form->input('state');
 //        echo $this->Form->input('lga');
-        echo $this->Form->input('ward',['type'=>'number']);
+        echo $this->Form->input('ward',['type'=>'number', 'min'=>1]);
         echo $this->Form->input('market');
         echo $this->Form->input('closest_landmark');
         echo $this->Form->input('no_of_members', array('min' => 0));
